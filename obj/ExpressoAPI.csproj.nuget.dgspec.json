@@ -38,7 +38,7 @@
           "dependencies": {
             "DotNetEnv": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[1.4.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

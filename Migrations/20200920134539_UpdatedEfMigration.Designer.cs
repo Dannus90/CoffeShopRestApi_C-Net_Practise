@@ -3,14 +3,16 @@ using System;
 using ExpressoAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ExpressoAPI.Migrations
 {
     [DbContext(typeof(ExpressoDbContext))]
-    partial class ExpressoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200920134539_UpdatedEfMigration")]
+    partial class UpdatedEfMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

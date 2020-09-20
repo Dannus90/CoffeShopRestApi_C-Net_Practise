@@ -11,7 +11,7 @@ namespace ExpressoAPI.Data
             
         }
 
-        public DbSet<Menu> MyProperty { get; set; }
+        public DbSet<Menu> Menus { get; set; }
         public DbSet<SubMenu> SubMenus { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
     }

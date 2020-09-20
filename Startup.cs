@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace ExpressoAPI
 {
@@ -25,7 +26,9 @@ namespace ExpressoAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = DotNetEnv.Env.GetString("CONNECTION_STRING")
             services.AddControllers();
+            services.AddDbContext<ExpressoDbContext>(option => option.UseMySQL(Configuration.GetConnectionString(connectionString)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

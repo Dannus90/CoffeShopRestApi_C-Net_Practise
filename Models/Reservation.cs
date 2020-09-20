@@ -26,7 +26,6 @@ namespace ExpressoAPI.Models
         [Required]
         [DataType(DataType.Time)]
         public string Time { get; set; }
-
         public Reservation()
         {
 

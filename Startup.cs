@@ -17,6 +17,8 @@ namespace ExpressoAPI
 {
     public class Startup
     {
+        private string _expressApiKey = null;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,9 +29,10 @@ namespace ExpressoAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = DotNetEnv.Env.GetString("CONNECTION_STRING");
+            _expressApiKey = "MySqlConnection";
+
             services.AddControllers();
-            services.AddDbContext<ExpressoDbContext>(option => option.UseMySQL(Configuration.GetConnectionString(connectionString)));
+            services.AddDbContext<ExpressoDbContext>(option => option.UseMySQL(Configuration.GetConnectionString(_expressApiKey)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
